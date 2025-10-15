@@ -6,7 +6,7 @@ const Hero = () => {
     return (
         <div className='max-w-[1220px] mx-auto px-[16px] xl:px-0 mt-[55px] flex flex-col-reverse md:flex-row items-center justify-between font-firacode text-white'>
             <div>
-                <h1 className='w-full md:w-[537px] text-[32px] font-[600]'>Elias is a <span className='text-primary'>web designer</span> and <span className='text-primary'>front-end developer</span></h1>
+                <h1 className='w-full md:w-[537px] text-[26px] md:text-[32px] font-[600] pt-[20px] md:mt-0'>Elias is a <span className='text-primary'>web designer</span> and <span className='text-primary'>front-end developer</span></h1>
                 <p className='font-[400] text-gray w-full md:w-[463px] my-[20px]'>He crafts responsive websites where technologies meet creativity</p>
                 <button className='border border-primary py-[10px] px-[20px] text-white cursor-pointer hover:shadow-sm duration-300 shadow-primary'>Contact me!!</button>
             </div>

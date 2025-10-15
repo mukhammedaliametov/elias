@@ -4,6 +4,7 @@
 @theme {
   --font-firacode: "Fira Code", monospace;
   --color-primary: #C778DD;
+  --color-gray: #ABB2BF;
 }
 
 body {

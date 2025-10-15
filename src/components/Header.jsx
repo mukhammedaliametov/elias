@@ -17,7 +17,7 @@ const Header = () => {
     { name: "contacts", link: "#" },
   ];
   return (
-    <div className="sticky top-0 w-full">
+    <div className="sticky top-[-0.2px] w-full">
     <div className="max-w-[1224px] h-[61px] mx-auto bg-[#282c33] px-[16px] xl:px-0 flex items-center justify-between font-firacode z-999">
       <a href="#">
         <img src={Logo} alt="logo" />

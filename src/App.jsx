@@ -12,9 +12,9 @@ import "aos/dist/aos.css";
 const App = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
-      once: true, 
-      offset: 200, 
+      duration: 1000,
+      once: true,
+      offset: 200,
     });
   }, []);
   return (

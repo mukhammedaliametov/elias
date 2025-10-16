@@ -6,7 +6,7 @@ import Figma from "../assets/Figma.svg";
 
 const Footer = () => {
   return (
-    <div className="max-w-[1220px] mx-auto px-[16px] xl:px-0 font-firacode text-white">
+    <div className="max-w-[1220px] mx-auto px-[16px] xl:px-0 font-firacode text-white border-t border-gray pt-[30px]">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div>
           <div className="flex items-center gap-[10px]">

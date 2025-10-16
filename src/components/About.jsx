@@ -8,7 +8,7 @@ const About = () => {
     <div className="max-w-[1220px] mx-auto px-[16px] xl:px-0 font-firacode text-white">
       <SectionTitle name="about-me" />
       <div className="flex flex-col-reverse md:flex-row gap-[20px] items-center justify-between">
-        <div className="w-full flex flex-col gap-[20px] text-[16px]/[28px] md:w-[615px] text-gray">
+        <div data-aos="fade-up" className="w-full flex flex-col gap-[20px] text-[16px]/[28px] md:w-[615px] text-gray">
           <p>Hello, i’m Elias!</p>
           <p>
             I’m a self-taught front-end developer based in Kyiv, Ukraine. I can
@@ -25,7 +25,7 @@ const About = () => {
           <button className="flex items-center gap-[10px] py-[5px] px-[15px] border border-primary cursor-pointer">Read more <HiOutlineArrowLongRight /></button>
           </div>
         </div>
-        <div>
+        <div data-aos="fade-up">
           <img src={AboutImg} alt="about_img" />
         </div>
       </div>

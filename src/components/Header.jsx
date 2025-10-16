@@ -13,11 +13,11 @@ const Header = () => {
   const navItems = [
     { name: "home", link: "#" },
     { name: "works", link: "#" },
-    { name: "about-me", link: "#" },
+    { name: "about_me", link: "#" },
     { name: "contacts", link: "#" },
   ];
   return (
-    <div className="sticky top-[-0.2px] w-full">
+    <div className="sticky top-[-0.2px] w-full z-999">
     <div className="max-w-[1224px] h-[61px] mx-auto bg-[#282c33] px-[16px] xl:px-0 flex items-center justify-between font-firacode z-999">
       <a href="#">
         <img src={Logo} alt="logo" />
@@ -33,8 +33,8 @@ const Header = () => {
             {itm.name}
           </a>
         ))}
-        <div className="flex items-center gap-[5px] cursor-pointer opacity-60 hover:opacity-100 duration-300">
-          <span>EN</span>
+        <div onClick={() => changeLanguage("ru")} className="flex items-center gap-[5px] cursor-pointer opacity-60 hover:opacity-100 duration-300">
+          <span >EN</span>
           <FaChevronDown />
         </div>
       </nav>

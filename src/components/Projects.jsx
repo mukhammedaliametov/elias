@@ -16,7 +16,7 @@ const Projects = () => {
             <SectionTitle  name='projects' button='view all' />
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] pt-[20px]'>
                 {projectItems.map((itm, idx) => (
-                    <div key={idx} className='border text-gray'>
+                    <div data-aos="fade-up" key={idx} className='border text-gray'>
                         <img src={itm.img} alt="img" className='w-full' />
                         <p className='p-[8px] border-b border-gray'>{itm.tech}</p>
                         <div className='p-[15px]'>

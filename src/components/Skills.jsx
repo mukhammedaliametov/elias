@@ -10,7 +10,7 @@ const Skills = () => {
         <div>
           <img src={SkillsImg} alt="skills_img" />
         </div>
-        <div className="flex flex-col md:flex-row items-start gap-[20px]">
+        <div data-aos="fade-up" className="flex flex-col md:flex-row items-start gap-[20px]">
           <div className="w-full md:w-auto">
             <div className="w-full md:max-w-[208px] text-white border border-gray">
               <p className="py-[6px] px-[10px] border-b border-gray mb-[10px]">Languages</p>

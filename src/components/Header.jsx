@@ -6,74 +6,81 @@ import Close from "../assets/close.svg";
 import Github from "../assets/Github.svg";
 import Dribble from "../assets/Dribble.svg";
 import Figma from "../assets/Figma.svg";
+import { Link, Outlet } from "react-router-dom";
 
 const Header = () => {
   const [nav, setNav] = useState();
   const handleClick = () => setNav(!nav);
   const navItems = [
-    { name: "home", link: "#" },
-    { name: "works", link: "#" },
+    { name: "home", link: "/" },
+    { name: "works", link: "/projects" },
     { name: "about_me", link: "#" },
     { name: "contacts", link: "#" },
   ];
   return (
-    <div className="sticky top-[-0.2px] w-full z-999">
-    <div className="max-w-[1224px] h-[61px] mx-auto bg-[#282c33] px-[16px] xl:px-0 flex items-center justify-between font-firacode z-999">
-      <a href="#">
-        <img src={Logo} alt="logo" />
-      </a>
-      <nav className="hidden md:flex items-center gap-[32px] text-white">
-        {navItems.map((itm, idx) => (
-          <a
-            key={idx}
-            href={itm.link}
-            className="opacity-60 hover:opacity-100 duration-300 nth-[1]:opacity-100"
-          >
-            <span className="text-primary">#</span>
-            {itm.name}
-          </a>
-        ))}
-        <div onClick={() => changeLanguage("ru")} className="flex items-center gap-[5px] cursor-pointer opacity-60 hover:opacity-100 duration-300">
-          <span >EN</span>
-          <FaChevronDown />
-        </div>
-      </nav>
-      <div onClick={handleClick} className="block md:hidden">
-        <img src={nav ? Close : Menu} alt="menu_bar" />
-      </div>
-      <div
-        className={`flex absolute top-[60px] w-full bg-[#282c33] md:hidden flex-col justify-between h-[96vh] gap-[15px] px-[16px] py-[30px] text-white -z-10 transition-all duration-500 ${
-          nav ? "left-0" : "left-[-100%]"
-        }`}
-      >
-        <div className="flex flex-col gap-[20px]">
-          <nav className="flex flex-col gap-[20px]">
-            {navItems.map((item, index) => (
-              <a key={index} href={item.link}>
+    <>
+      <div className="sticky top-[-0.2px] w-full z-999">
+        <div className="max-w-[1224px] h-[61px] mx-auto bg-[#282c33] px-[16px] xl:px-0 flex items-center justify-between font-firacode z-999">
+          <Link to="/">
+            <img src={Logo} alt="logo" />
+          </Link>
+          <nav className="hidden md:flex items-center gap-[32px] text-white">
+            {navItems.map((itm, idx) => (
+              <Link
+                key={idx}
+                to={itm.link}
+                className="opacity-60 hover:opacity-100 duration-300 nth-[1]:opacity-100"
+              >
                 <span className="text-primary">#</span>
-                {item.name}
-              </a>
+                {itm.name}
+              </Link>
             ))}
+            <div
+              onClick={() => changeLanguage("ru")}
+              className="flex items-center gap-[5px] cursor-pointer opacity-60 hover:opacity-100 duration-300"
+            >
+              <span>EN</span>
+              <FaChevronDown />
+            </div>
           </nav>
-          <div className="flex items-center gap-[5px] cursor-pointer opacity-60 hover:opacity-100 duration-300">
-            <span>EN</span>
-            <FaChevronDown />
+          <div onClick={handleClick} className="block md:hidden">
+            <img src={nav ? Close : Menu} alt="menu_bar" />
+          </div>
+          <div
+            className={`flex absolute top-[60px] w-full bg-[#282c33] md:hidden flex-col justify-between h-[96vh] gap-[15px] px-[16px] py-[30px] text-white -z-10 transition-all duration-500 ${
+              nav ? "left-0" : "left-[-100%]"
+            }`}
+          >
+            <div className="flex flex-col gap-[20px]">
+              <nav className="flex flex-col gap-[20px]">
+                {navItems.map((item, index) => (
+                  <Link key={index} to={item.link}>
+                    <span className="text-primary">#</span>
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+              <div className="flex items-center gap-[5px] cursor-pointer opacity-60 hover:opacity-100 duration-300">
+                <span>EN</span>
+                <FaChevronDown />
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-[10px] mx-auto my-[20px]">
+              <a href="#" className="">
+                <img src={Github} alt="" className="w-[40px]" />
+              </a>
+              <a href="#" className="">
+                <img src={Dribble} alt="" className="w-[40px]" />
+              </a>
+              <a href="#" className="">
+                <img src={Figma} alt="" className="w-[40px]" />
+              </a>
+            </div>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-[10px] mx-auto my-[20px]">
-          <a href="#" className="">
-            <img src={Github} alt="" className="w-[40px]" />
-          </a>
-          <a href="#" className="">
-            <img src={Dribble} alt="" className="w-[40px]" />
-          </a>
-          <a href="#" className="">
-            <img src={Figma} alt="" className="w-[40px]" />
-          </a>
-        </div>
       </div>
-    </div>
-    </div>
+      <Outlet />
+    </>
   );
 };
 

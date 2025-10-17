@@ -5,7 +5,7 @@ import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import About from "../components/About";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import Bracket from '../assets/bracket.svg';
 
 const Hero = () => {
   return (
@@ -31,6 +31,16 @@ const Hero = () => {
               on <span className="text-white">Portfolio</span>
             </p>
           </div>
+        </div>
+      </div>
+      <div className="relative w-full md:max-w-[550px] flex flex-col items-end px-[20px] xl:px-0 md:mx-auto mt-[50px] font-firacode text-white">
+        <img src={Bracket} alt="bracket_1" width={'20px'} className="absolute left-[20px] top-[-6px]" />
+        <img src={Bracket} alt="bracket_2" width={'20px'} className="absolute right-[10px] bottom-[40px]" />
+        <div className="border border-gray py-[20px] px-[30px] md:text-[18px] font-[500]">
+            <p>With great power comes great electricity bill</p>
+        </div>
+        <div className="inline-flex justify-end py-[10px] px-[15px] border border-gray ">
+            <p>- Dr. Who</p>
         </div>
       </div>
       <Projects />

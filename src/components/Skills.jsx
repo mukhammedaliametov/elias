@@ -6,7 +6,7 @@ const Skills = () => {
   return (
     <div className="max-w-[1220px] mx-auto px-[16px] xl:px-0 font-firacode">
       <SectionTitle name="skills" />
-      <div className="flex flex-col md:flex-row gap-[20px] items-start justify-between my-[20px]">
+      <div className="flex flex-col-reverse md:flex-row gap-[20px] items-start justify-between my-[20px]">
         <div>
           <img src={SkillsImg} alt="skills_img" />
         </div>

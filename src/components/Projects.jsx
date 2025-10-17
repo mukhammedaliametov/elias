@@ -13,7 +13,7 @@ const Projects = () => {
     ]
     return (
         <div className='max-w-[1220px] mx-auto px-[16px] xl:px-0 mt-[60px] text-white font-firacode'>
-            <SectionTitle  name='projects' button='view all' />
+            <SectionTitle  name='projects' button='view all' link='/works' />
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] pt-[20px]'>
                 {projectItems.map((itm, idx) => (
                     <div data-aos="fade-up" key={idx} className='border text-gray'>

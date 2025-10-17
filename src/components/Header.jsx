@@ -6,16 +6,18 @@ import Close from "../assets/close.svg";
 import Github from "../assets/Github.svg";
 import Dribble from "../assets/Dribble.svg";
 import Figma from "../assets/Figma.svg";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [nav, setNav] = useState();
   const handleClick = () => setNav(!nav);
+  const [activeSection, setActiveSection] = useState('home');
+  
   const navItems = [
     { name: "home", link: "/" },
-    { name: "works", link: "/projects" },
-    { name: "about_me", link: "#" },
-    { name: "contacts", link: "#" },
+    { name: "works", link: "/works" },
+    { name: "about_me", link: "javascript:void(0)" },
+    { name: "contacts", link: "javascript:void(0)" },
   ];
   return (
     <>
@@ -29,7 +31,8 @@ const Header = () => {
               <Link
                 key={idx}
                 to={itm.link}
-                className="opacity-60 hover:opacity-100 duration-300 nth-[1]:opacity-100"
+                onClick={() => setActiveSection(itm.name)}
+                className={`hover:opacity-100 duration-300 ${activeSection === itm.name ? 'opacity-100' : 'opacity-60'}`}
               >
                 <span className="text-primary">#</span>
                 {itm.name}
@@ -54,7 +57,7 @@ const Header = () => {
             <div className="flex flex-col gap-[20px]">
               <nav className="flex flex-col gap-[20px]">
                 {navItems.map((item, index) => (
-                  <Link key={index} to={item.link}>
+                  <Link key={index} to={item.link} onClick={handleClick}>
                     <span className="text-primary">#</span>
                     {item.name}
                   </Link>
